@@ -48,14 +48,24 @@ const Container = () => {
 
   return (
     <div className="w-full -mt-24">
-      <div className="w-5/6 mx-auto bg-[#c0c0c0]  flex items-center gap-8  flex-col rounded-lg min-h-[384px] shadow-2xl">
-        <div className=" flex items-center justify-center h-10 w-5/6 px-4 mt-8 rounded-lg bg-white ">
+      <div className="w-5/6 mx-auto bg-[#d4d3d3]  flex items-center gap-8  flex-col rounded-lg min-h-[384px] shadow-2xl">
+        <div className=" flex items-center justify-center h-10 w-5/6 px-4 mt-8 rounded-lg bg-white  ">
           <input
             type="text"
-            className="w-80 outline-none flex-1"
+            maxLength={60}
+            className="w-5/6 outline-none flex-1   caret-rose-600"
             placeholder="Enter Any Task"
             onChange={(e) => setValue(e.target.value)}
             value={value}
+            onKeyPress={(e) => {
+              if (e.key === "Enter") {
+                // setInputData(e.target.value);
+                // inputData === '' ? alert("enter something"):
+                // Dispatch(plus(inputData));
+                // setInputData('')
+                handleInput();
+              }
+            }}
           />
           <GrFormAdd size={35} color="blue" onClick={() => handleInput()} />
         </div>

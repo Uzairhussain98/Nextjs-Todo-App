@@ -14,9 +14,9 @@ type prop = {
 const TodoList = ({ todo, handleDone, handleDelete }: prop) => {
   return (
     <div
-      className={`flex items-center justify-center h-10 w-3/6 px-4 rounded-lg ${
-        todo.isCompleted ? "bg-green-300" : "bg-gray-300"
-      }`}
+      className={`flex items-center justify-center py-2 h-auto min-h-10 w-5/6 md:w-4/6 px-4 rounded-lg ${
+        todo.isCompleted ? "bg-green-300" : "bg-[#FFFDD0]"
+      } transition-all ease-in-out duration-500`}
     >
       <input
         type="checkbox"
